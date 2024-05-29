@@ -1,0 +1,10 @@
+{
+  "DATA_PATH" : "./datasets",
+  "RESULTS_PATH" : "./Results",
+  "SPLITS_PATH" : "./datasets/splits",
+  "TESTS_PATH" : "./Tests",
+  "CONFIG_PATH": "./Configs",
+  "SCRIPT_PATH": "./Scripts",
+  "use_wandb_tracking" : True,
+  "project": "PathGNNs"
+}

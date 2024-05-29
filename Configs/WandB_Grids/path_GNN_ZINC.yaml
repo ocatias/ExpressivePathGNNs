@@ -1,0 +1,45 @@
+program: Exp/run_model.py
+command:
+- ${env}
+- /home/fjogl/miniconda3/envs/basicPathGNN/bin/python
+- ${program}
+- ${args}
+metric:
+  name: Final/Val/mae
+  goal: minimize
+method: "bayes"
+parameters:
+  model:
+    value: "pathGNN"
+  dataset:
+    value: "ZINC"
+  epochs:
+    value: 1000
+  batch_size:
+    value: 128
+  emb_dim:
+    values: [64, 128]
+  drop_out:
+    values: [0]
+  num_layer:
+    values: [1,2,3,4,5]
+  reverse:
+    values: [0,1]
+  lr:
+    values: [0.001]
+  path_length:
+    values: [2,3,4]
+  pooling:
+    values: ["sum"]
+  lr_schedule_patience:
+    value: 20
+  lr_scheduler_decay_rate:
+    value: 0.5
+  min_lr:
+    value: 1e-05
+  num_mlp_layers:
+    value: 2
+  lstm_depth:
+    values: [1,2,3,4,5]
+  share_lstm:
+    values: [0,1]
